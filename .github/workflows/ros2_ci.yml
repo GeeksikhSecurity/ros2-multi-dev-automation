@@ -1,0 +1,15 @@
+name: ROS2 CI/CD Pipeline
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+    - name: Test scripts
+      run: |
+        chmod +x *.sh scripts/*.sh
+        ./ros2_dev.sh help

@@ -1,0 +1,5 @@
+FROM ros:humble-desktop
+RUN apt-get update && apt-get install -y python3-colcon-common-extensions git
+WORKDIR /ros2_ws
+COPY . .
+CMD ["bash"]
